@@ -22,7 +22,7 @@
             display: flex;
             flex-direction: column;
             height: 100vh;
-            
+
         }
 
         #iframe {
@@ -38,7 +38,7 @@
         #iframe.empty {
             display: none;
         }
-        
+
         #iframe:not(.empty) ~ .tab-content {
             display:none;
         }
@@ -50,7 +50,7 @@
 
         #iframe:not(.empty) + .placeholder {
             display:none;
-        }     
+        }
 
 
         #tab-container {
@@ -102,7 +102,7 @@
             padding: 0;
             overflow:hidden;
         }
-    
+
         /*--Dock--*/
 
         footer {
@@ -229,7 +229,7 @@
             text-decoration: none;
         }
     </style>
-    
+
 </head>
 
 <body>
@@ -237,7 +237,7 @@
     // Handle iframe location set or change
     function HandleLocationChange (iframe, url) {
         if (url == 'about:blank') {
-            iframe.classList.add('empty'); 
+            iframe.classList.add('empty');
         } else {
             iframe.classList.remove('empty');
         }
@@ -248,7 +248,7 @@
             <span class="dot"></span>
             <div class="tab">
                 <iframe id="iframe" class="empty" src="about:blank" onload="HandleLocationChange(this, this.contentWindow.location.href)" ></iframe>
-                
+
                 <div class="placeholder"></div>
                 <footer class="tab-content">
                     <ul>
@@ -259,7 +259,7 @@
                         </li>
                         <li data-title="Commands & Hotkeys">
                             <a class="nav-myframe" href="html/hotties.html">
-                                <i class="myicon material-icons">keyboard</i>                                
+                                <i class="myicon material-icons">keyboard</i>
                             </a>
                         </li>
                         <li data-title="Laws">
@@ -277,8 +277,8 @@
                                 <i class="myicon material-icons">school</i>
                             </a>
                         </li>
-                        <li data-title="OpenCAD">
-                            <a class="nav-myframe" href="html/opencad.html">
+                        <li data-title="DCRP FMS">
+                            <a class="nav-myframe" href="html/FMS.html">
                                 <i class="myicon material-icons">dashboard</i>
                             </a>
                         </li>
@@ -297,7 +297,7 @@
                                 <i class="myicon material-icons">videogame_asset</i>
                             </a>
                         </li> -->
-                    
+
                     </ul>
                 </footer>
             </div>
@@ -321,7 +321,7 @@
 
             SHOW_HIDE(false); // hide the tablet initial
 
-            // Listens for NUI messages from Lua 
+            // Listens for NUI messages from Lua
             window.addEventListener('message', function (event) {
                 var item = event.data;
                 if (item.showtab) {
@@ -364,7 +364,7 @@
                 // bounce dat ass
                 setTimeout(function () {
                     iframe.src = self.href || "about:blank"; // trigger HandleLocationChange
-                    icon.removeClass("jump");    
+                    icon.removeClass("jump");
                 }, 600)
 
                 return false;
